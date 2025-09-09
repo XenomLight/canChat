@@ -60,9 +60,9 @@ dfx deploy
 ## Running the project locally
 
 ```bash
+git clone https://github.com/XenomLight/canChat
 dfx start --background
 cd src/canChat_frontend
-npm install
 dfx deploy
 ```
 
