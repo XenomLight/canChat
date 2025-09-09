@@ -336,15 +336,24 @@ p {
   background: white;
   border-top: 1px solid #e9ecef;
   gap: 15px;
+  align-items: center;
 }
 
 .message-input {
-  flex: 1;
+  flex: 3 1 0;
   padding: 12px 16px;
   border: 2px solid #e9ecef;
   border-radius: 25px;
   font-size: 1rem;
   outline: none;
+  min-width: 0; /* allow shrinking in flex */
+}
+
+/* Ensure send button remains visible on narrow screens */
+.message-form .btn {
+  flex: 1 1 0;
+  min-width: 0 !important; /* allow shrinking; override global .btn */
+  white-space: nowrap;
 }
 
 .message-input:focus {
@@ -501,6 +510,33 @@ p {
   .room-info {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .message-form {
+    gap: 10px;
+    padding: 16px;
+  }
+
+  .message-form .btn {
+    flex: 1 1 0;
+    min-width: 0 !important;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-form {
+    gap: 8px;
+    padding: 12px;
+  }
+  .message-input {
+    font-size: 0.95rem;
+    padding: 10px 12px;
+  }
+  .message-form .btn {
+    flex: 1 1 0;
+    min-width: 0 !important;
+    padding: 10px 12px;
   }
 }
 
