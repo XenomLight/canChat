@@ -324,6 +324,21 @@ persistent actor canChatBackend {
         }
     };
 
+    // Creator-only: end a room explicitly
+    public shared(_msg) func endRoom(roomCode: RoomCode, sessionId: SessionId): async Bool {
+        switch (rooms.get(roomCode)) {
+            case (?room) {
+                if (room.creator == sessionId) {
+                    rooms.delete(roomCode);
+                    true
+                } else {
+                    false
+                }
+            };
+            case null { false }
+        }
+    };
+
     public shared(_msg) func leaveRoom(roomCode: RoomCode, sessionId: SessionId): async Bool {
         switch (rooms.get(roomCode)) {
             case (?room) {
