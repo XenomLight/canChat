@@ -62,7 +62,7 @@ dfx deploy
 ```bash
 git clone https://github.com/XenomLight/canChat
 dfx start --background
-cd src/canChat_frontend
+cd canChat
 dfx deploy
 ```
 
