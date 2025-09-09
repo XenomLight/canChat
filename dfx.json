@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "canChat_backend": {
+      "main": "src/canChat_backend/main.mo",
+      "type": "motoko"
+    },
+    "canChat_frontend": {
+      "dependencies": [
+        "canChat_backend"
+      ],
+      "source": [
+        "src/canChat_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "canChat_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
