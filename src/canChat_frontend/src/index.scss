@@ -161,7 +161,6 @@ p {
   gap: 15px;
 }
 
-/* Modal styles (global) */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -247,20 +246,23 @@ p {
 
 .message-header {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: baseline;
+  gap: 8px;
   margin-bottom: 5px;
   font-size: 0.9rem;
-  width: 100%;
 }
 
 .message.own .message-header {
   flex-direction: row-reverse;
   justify-content: flex-end;
+  gap: 8px;
 }
 
 .message.other .message-header {
   flex-direction: row;
   justify-content: flex-start;
+  gap: 8px;
 }
 
 .sender {
